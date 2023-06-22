@@ -13,14 +13,9 @@ namespace Disconnected_Environment
 {
     public partial class Form4 : Form
     {
-        private string stringConnection = "data source=BRILLIANAMINDIA;database=Activity6;User ID=sa; Password=123";
+        private string stringConnection = "data source=BRILLIANAMINDIA;" +
+            "database=Activity6;User ID=sa; Password=123";
         private SqlConnection koneksi;
-        public Form4()
-        {
-            InitializeComponent();
-            koneksi = new SqlConnection(stringConnection);
-            refreshform();
-        }
 
         private void refreshform()
         {
@@ -36,6 +31,14 @@ namespace Disconnected_Environment
             btnAdd.Enabled = true;
 
         }
+        public Form4()
+        {
+            InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
+            refreshform();
+        }
+
+       
 
         private void datagridview()
         {
@@ -125,12 +128,7 @@ namespace Disconnected_Environment
 
        
 
-        private void Form4_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Form1 fm = new Form1();
-            fm.Show();
-            this.Hide();
-        }
+        
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
@@ -199,12 +197,29 @@ namespace Disconnected_Environment
 
         private void label1_Click_1(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
+        }
+
+        private void cbxTahunMasuk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxNama_SelectedIndexChanged(object sender, EventArgs e)
+        {
             koneksi.Open();
             string nim = "";
             string strs = "select NIM from dbo.Mahasiswa where nama_mahasiswa = @nm";
             SqlCommand cm = new SqlCommand(strs, koneksi);
             cm.CommandType = CommandType.Text;
-            cm.Parameters.Add(new SqlParameter("@nm", Nama.Text));
+            cm.Parameters.Add(new SqlParameter("@nm", cbxNama.Text));
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -213,11 +228,6 @@ namespace Disconnected_Environment
             dr.Close();
             koneksi.Close();
             txtNIM.Text = nim;
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

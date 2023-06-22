@@ -70,6 +70,7 @@
             this.cbxTahunMasuk.Name = "cbxTahunMasuk";
             this.cbxTahunMasuk.Size = new System.Drawing.Size(219, 28);
             this.cbxTahunMasuk.TabIndex = 23;
+            this.cbxTahunMasuk.SelectedIndexChanged += new System.EventHandler(this.cbxTahunMasuk_SelectedIndexChanged);
             // 
             // cbxStatusMahasiswa
             // 
@@ -86,6 +87,7 @@
             this.cbxNama.Name = "cbxNama";
             this.cbxNama.Size = new System.Drawing.Size(219, 28);
             this.cbxNama.TabIndex = 21;
+            this.cbxNama.SelectedIndexChanged += new System.EventHandler(this.cbxNama_SelectedIndexChanged);
             // 
             // btnSave
             // 

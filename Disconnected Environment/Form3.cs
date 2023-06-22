@@ -72,7 +72,15 @@ namespace Disconnected_Environment
             FormDataMahasiswa_Load();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        
+        
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            refreshform();
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
             txtNIM.Text = "";
             txtNama.Text = "";
@@ -90,7 +98,7 @@ namespace Disconnected_Environment
             btnAdd.Enabled = false;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             nim = txtNIM.Text;
             nama = txtNama.Text;
@@ -124,7 +132,7 @@ namespace Disconnected_Environment
             refreshform();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click_1(object sender, EventArgs e)
         {
             refreshform();
         }
