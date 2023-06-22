@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnAddNama = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nmp = new System.Windows.Forms.TextBox();
             this.btnOpen = new System.Windows.Forms.Button();
@@ -47,14 +46,7 @@
             this.btnAddNama.TabIndex = 19;
             this.btnAddNama.Text = "Add";
             this.btnAddNama.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(173, 256);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 20);
-            this.label2.TabIndex = 17;
+            this.btnAddNama.Click += new System.EventHandler(this.btnAddNama_Click);
             // 
             // label1
             // 
@@ -74,12 +66,13 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(633, 55);
+            this.btnOpen.Location = new System.Drawing.Point(604, 55);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 31);
             this.btnOpen.TabIndex = 14;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnClear
             // 
@@ -89,6 +82,7 @@
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -98,6 +92,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dataGridView1
             // 
@@ -106,7 +101,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(477, 221);
+            this.dataGridView1.Size = new System.Drawing.Size(477, 222);
             this.dataGridView1.TabIndex = 10;
             // 
             // Form2
@@ -115,7 +110,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAddNama);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nmp);
             this.Controls.Add(this.btnOpen);
@@ -123,7 +117,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form2";
-            this.Text = "Data Prodi";
+            this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -134,7 +128,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAddNama;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nmp;
         private System.Windows.Forms.Button btnOpen;

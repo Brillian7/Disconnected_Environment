@@ -37,7 +37,7 @@ namespace Disconnected_Environment
 
         }
 
-        private void datagridview1()
+        private void datagridview()
         {
             koneksi.Open();
             string str = "select * from dbo.status_mahasiswa";
@@ -116,13 +116,41 @@ namespace Disconnected_Environment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            datagridview1();
-            btnOpen.Enabled = false;
+            
         }
 
         
 
-        private void btnSave_Click(object sender, EventArgs e)
+       
+
+       
+
+        private void Form4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            cbxTahunMasuk.Enabled = true;
+            cbxNama.Enabled = true;
+            cbxStatusMahasiswa.Enabled = true;
+            txtNIM.Visible = true;
+            cbTahunMasuk();
+            cbNama();
+            btnClear.Enabled = true;
+            btnSave.Enabled = true;
+            btnAdd.Enabled = false;
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            refreshform();
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             string nim = txtNIM.Text;
             string statusMahasiswa = cbxStatusMahasiswa.Text;
@@ -160,34 +188,36 @@ namespace Disconnected_Environment
 
             MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
             refreshform();
-            datagridview1();
-
-
+            datagridview();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnOpen_Click(object sender, EventArgs e)
         {
-            refreshform();
+            datagridview();
+            btnOpen.Enabled = false;
         }
 
-        private void Form4_FormClosed(object sender, FormClosedEventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
-            Form1 fm = new Form1();
-            fm.Show();
-            this.Hide();
+            koneksi.Open();
+            string nim = "";
+            string strs = "select NIM from dbo.Mahasiswa where nama_mahasiswa = @nm";
+            SqlCommand cm = new SqlCommand(strs, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("@nm", Nama.Text));
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                nim = dr["NIM"].ToString();
+            }
+            dr.Close();
+            koneksi.Close();
+            txtNIM.Text = nim;
         }
 
-        private void btnAdd_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            cbxTahunMasuk.Enabled = true;
-            cbxNama.Enabled = true;
-            cbxStatusMahasiswa.Enabled = true;
-            txtNIM.Visible = true;
-            cbTahunMasuk();
-            cbNama();
-            btnClear.Enabled = true;
-            btnSave.Enabled = true;
-            btnAdd.Enabled = false;
+
         }
     }
 }

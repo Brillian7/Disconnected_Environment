@@ -361,7 +361,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Name = "FormDataMahasiswa";
-            this.Text = "Data Mahasiswa";
+            this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
