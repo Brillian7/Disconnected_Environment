@@ -18,13 +18,7 @@ namespace Disconnected_Environment
         private string nim, nama, alamat, jk, prodi;
         private DateTime tgl;
         BindingSource customerBindingSource = new BindingSource();
-        public FormDataMahasiswa()
-        {
-            InitializeComponent();
-            koneksi = new SqlConnection(stringConnection);
-            this.bindingNavigator1.BindingSource = this.customerBindingSource;
-            refreshform();
-        }
+        
 
         private void FormDataMahasiswa_Load()
         {
@@ -71,9 +65,13 @@ namespace Disconnected_Environment
             clearBinding();
             FormDataMahasiswa_Load();
         }
-
-        
-        
+        public FormDataMahasiswa()
+        {
+            InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
+            this.bindingNavigator1.BindingSource = this.customerBindingSource;
+            refreshform();
+        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -135,6 +133,13 @@ namespace Disconnected_Environment
         private void btnClear_Click_1(object sender, EventArgs e)
         {
             refreshform();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
         }
 
         private void Prodicbx()
