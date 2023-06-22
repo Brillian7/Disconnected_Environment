@@ -13,7 +13,7 @@ namespace Disconnected_Environment
 {
     public partial class Form4 : Form
     {
-        private string stringConnection = "data source=RENITAWIDIASTUT\\RENITAWDST;database=ACT6;User ID=sa; Password=Rere2607";
+        private string stringConnection = "data source=BRILLIANAMINDIA;database=Activity6;User ID=sa; Password=123";
         private SqlConnection koneksi;
         public Form4()
         {
