@@ -91,5 +91,12 @@ namespace Disconnected_Environment
             koneksi.Close();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 hu = new Form1();
+            hu.Show();
+            this.Hide();
+        }
     }
 }
